@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>todo app</h1>
-    <form action="">
+    <form action="/add" , method="POST">
         <div>
             <label for="title">todo</label>
             <input type="text" name="title" placeholder="Ente todo...">
@@ -23,7 +23,7 @@
             <span>Completed</span>
         {% endif%}
         <a href="/">Update</a>
-        <a href="/">Delet</a>
+        <a href="/">Delete</a>
     {% endfor %}
 
 </body>
