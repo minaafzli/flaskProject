@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
 </head>
 <body>
-    <h1>todo app</h1>
+    <h1 class="ui block header , ui purple header">todo app</h1>
     <form action="/add" , method="POST">
         <div>
             <label for="title">todo Title</label>
-            <input type="text" name="title" placeholder="Ente todo...">
-            <button type="submit">add</button>
+            <input class="ui input" type="text" name="title" placeholder="Ente todo...">
+            <button class="ui green button , tiny ui button" type="submit">add</button>
         </div>
     </form>
 
     {% for todo in todo_list %}
+    <div class="ui segment">
         <p> {{ todo.id }} | {{ todo.title }} </p>
         {% if todo.complete == False %}
             <span>Not Complete</span>
         {% else%}
             <span>Completed</span>
         {% endif%}
-        <a href="/update/{{ todo.id }}">Update</a>
-        <a href="/delete/{{ todo.id }}">Delete</a>
+        <a class="ui blue button , small ui button" href="/update/{{ todo.id }}">Update</a>
+        <a class="ui red button , smallui button" href="/delete/{{ todo.id }}">Delete</a>
+    </div>
     {% endfor %}
 
 </body>
